@@ -49,7 +49,7 @@ function printSearchHistory() {
       }).then(function (response) {
         var currentUV = response.value
         var sevenDayQueryUrl =
-          'httpss://api.openweathermap.org/data/2.5/onecall?lat=' +
+          'https://api.openweathermap.org/data/2.5/onecall?lat=' +
           currentLat +
           '&lon=' +
           currentLon +
@@ -153,7 +153,7 @@ $(document).ready(function () {
       }).then(function (response) {
         var currentUV = response.value
         var sevenDayQueryUrl =
-          'httpss://api.openweathermap.org/data/2.5/onecall?lat=' +
+          'https://api.openweathermap.org/data/2.5/onecall?lat=' +
           currentLat +
           '&lon=' +
           currentLon +
