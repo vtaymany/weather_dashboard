@@ -67,6 +67,12 @@ $(document).ready(function () {
         method: 'GET',
       }).then(function (response) {
         var currentUV = response.value
+        var sevenDayQueryUrl =
+          'https://api.openweathermap.org/data/2.5/onecall?lat=' +
+          currentLat +
+          '&lon=' +
+          currentLon +
+          '&units=imperial&exclude=current,minutely,hourly,alerts&appid=1ecf7de7ea24bfd2e7affef635ed6b53'
         $('#current-city-name').text(cityName)
         $('#current-city-date').text(cityDate)
         $('#current-city-temperature').html(
@@ -75,6 +81,35 @@ $(document).ready(function () {
         $('#current-city-humidity').html(' ' + currentHumidity + ' %')
         $('#current-city-wind-speed').html(' ' + currentWindSpeed + ' mph')
         $('#current-city-uv').html(' ' + currentUV)
+        $.ajax({
+          url: sevenDayQueryUrl,
+          method: 'GET',
+        }).then(function (response) {
+          var sevenDayForecast = response.daily
+          console.log(sevenDayForecast)
+          for (i = 0; i < 6; i++) {
+            var dailyDate = moment
+              .unix(sevenDayForecast[i].dt)
+              .format('MM/DD/YYYY')
+            var dailyIcon =
+              'http://openweathermap.org/img/w/' +
+              sevenDayForecast[i].weather[0].icon +
+              '.png'
+            var dailyTemperature = sevenDayForecast[i].temp.day
+            var dailyHumidity = sevenDayForecast[i].humidity
+            $('#day-' + [i]).html(
+              "<div class='card text-center'><div id='single-forecast' class='card-body'><h5 id='forecast-date' class='card-title'>" +
+                dailyDate +
+                "</h5><img src='" +
+                dailyIcon +
+                "' alt='weather icon' /><p class='card-text forecast-temperature'>Temp: " +
+                dailyTemperature +
+                " &#176;F</p><p class='card-text forecast-humidity'>Humidity: " +
+                dailyHumidity +
+                ' %</p></div></div>'
+            )
+          }
+        })
       })
     })
   })
