@@ -23,7 +23,7 @@ function printSearchHistory() {
   $('.past-city').on('click', function () {
     var pastUserCity = $(this).html()
     var pastUserCityQueryURL =
-      'http://api.openweathermap.org/data/2.5/weather?q=' +
+      'https://api.openweathermap.org/data/2.5/weather?q=' +
       pastUserCity +
       '&units=imperial&appid=1ecf7de7ea24bfd2e7affef635ed6b53'
     $.ajax({
@@ -38,7 +38,7 @@ function printSearchHistory() {
       var currentHumidity = response.main.humidity
       var currentWindSpeed = response.wind.speed
       var UVqueryURL =
-        'http://api.openweathermap.org/data/2.5/uvi?lat=' +
+        'https://api.openweathermap.org/data/2.5/uvi?lat=' +
         currentLat +
         '&lon=' +
         currentLon +
@@ -49,7 +49,7 @@ function printSearchHistory() {
       }).then(function (response) {
         var currentUV = response.value
         var sevenDayQueryUrl =
-          'https://api.openweathermap.org/data/2.5/onecall?lat=' +
+          'httpss://api.openweathermap.org/data/2.5/onecall?lat=' +
           currentLat +
           '&lon=' +
           currentLon +
@@ -84,7 +84,7 @@ function printSearchHistory() {
               .unix(sevenDayForecast[i].dt)
               .format('MM/DD/YYYY')
             var dailyIcon =
-              'http://openweathermap.org/img/w/' +
+              'https://openweathermap.org/img/w/' +
               sevenDayForecast[i].weather[0].icon +
               '.png'
             var dailyTemperature = sevenDayForecast[i].temp.day
@@ -127,7 +127,7 @@ $(document).ready(function () {
     addToLocalStorage(userCity)
     printSearchHistory()
     var userCityQueryURL =
-      'http://api.openweathermap.org/data/2.5/weather?q=' +
+      'https://api.openweathermap.org/data/2.5/weather?q=' +
       userCity +
       '&units=imperial&appid=1ecf7de7ea24bfd2e7affef635ed6b53'
     $.ajax({
@@ -142,7 +142,7 @@ $(document).ready(function () {
       var currentHumidity = response.main.humidity
       var currentWindSpeed = response.wind.speed
       var UVqueryURL =
-        'http://api.openweathermap.org/data/2.5/uvi?lat=' +
+        'https://api.openweathermap.org/data/2.5/uvi?lat=' +
         currentLat +
         '&lon=' +
         currentLon +
@@ -153,7 +153,7 @@ $(document).ready(function () {
       }).then(function (response) {
         var currentUV = response.value
         var sevenDayQueryUrl =
-          'https://api.openweathermap.org/data/2.5/onecall?lat=' +
+          'httpss://api.openweathermap.org/data/2.5/onecall?lat=' +
           currentLat +
           '&lon=' +
           currentLon +
@@ -187,7 +187,7 @@ $(document).ready(function () {
               .unix(sevenDayForecast[i].dt)
               .format('MM/DD/YYYY')
             var dailyIcon =
-              'http://openweathermap.org/img/w/' +
+              'https://openweathermap.org/img/w/' +
               sevenDayForecast[i].weather[0].icon +
               '.png'
             var dailyTemperature = sevenDayForecast[i].temp.day
