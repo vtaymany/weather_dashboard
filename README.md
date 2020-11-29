@@ -33,6 +33,8 @@
 
 Demo showing full application
 ![Full application demo](./assets/screenshots/weather-dashboard.gif 'Full application demo')
+WHO UV index guidelines
+![WHO UV index guidelines](./assets/screenshots/uvi-key.png 'WHO UV index guidelines')
 
 ## Credits
 
