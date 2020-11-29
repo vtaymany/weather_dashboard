@@ -21,7 +21,6 @@ function printSearchHistory() {
     )
   }
   $('.past-city').on('click', function () {
-    console.log('hello')
     var pastUserCity = $(this).html()
     var pastUserCityQueryURL =
       'http://api.openweathermap.org/data/2.5/weather?q=' +
@@ -63,6 +62,17 @@ function printSearchHistory() {
         $('#current-city-humidity').html(' ' + currentHumidity + ' %')
         $('#current-city-wind-speed').html(' ' + currentWindSpeed + ' mph')
         $('#current-city-uv').html(' ' + currentUV)
+        if (currentUV < 2.0) {
+          $('#current-city-uv').css('background-color', 'lightgreen')
+        } else if (3.0 < currentUV < 5.0) {
+          $('#current-city-uv').css('background-color', 'yellow')
+        } else if (6.0 < currentUV < 7.0) {
+          $('#current-city-uv').css('background-color', 'lightorange')
+        } else if (8.0 < currentUV < 10.0) {
+          $('#current-city-uv').css('background-color', 'lightred')
+        } else {
+          $('#current-city-uv').css('background-color', 'lightpurple')
+        }
         $.ajax({
           url: sevenDayQueryUrl,
           method: 'GET',
@@ -156,12 +166,22 @@ $(document).ready(function () {
         $('#current-city-humidity').html(' ' + currentHumidity + ' %')
         $('#current-city-wind-speed').html(' ' + currentWindSpeed + ' mph')
         $('#current-city-uv').html(' ' + currentUV)
+        if (currentUV < 2.0) {
+          $('#current-city-uv').css('background-color', 'lightgreen')
+        } else if (3.0 < currentUV < 5.0) {
+          $('#current-city-uv').css('background-color', 'yellow')
+        } else if (6.0 < currentUV < 7.0) {
+          $('#current-city-uv').css('background-color', 'lightorange')
+        } else if (8.0 < currentUV < 10.0) {
+          $('#current-city-uv').css('background-color', 'lightred')
+        } else {
+          $('#current-city-uv').css('background-color', 'lightpurple')
+        }
         $.ajax({
           url: sevenDayQueryUrl,
           method: 'GET',
         }).then(function (response) {
           var sevenDayForecast = response.daily
-          console.log(sevenDayForecast)
           for (i = 0; i < 6; i++) {
             var dailyDate = moment
               .unix(sevenDayForecast[i].dt)
