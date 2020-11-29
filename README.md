@@ -2,49 +2,44 @@
 
 ## Main project goal
 
-- The main goal of this app is to provide a simple calendar application that allows a user to save events for each hour of the day. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
+- The main goal of this app is to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS
 
 ### Instructions
 
 - Open the application
 
-- The current day will be displayed at the top of the calendar
+- Search for a city
 
-- Scroll down to view the time block for standard business hours
+- View current weather conditions for that city
 
-  - Grey blocks represent the past hours
-  - The red block represents the current hour
-  - Green blocks represent future hours
+  - UV Index color indicators follows WHO guidelines
 
-- Click into any time block
+- Click on a city in the search history
 
-- Enter an event
-
-- Click save for that time block
-
-- The event will remain even if the user refreshes the page
+  - View current weather conditions for that city
 
 ## Installation
 
-- No installation is required. The application may be viewed [here](https://vtaymany.github.io/workday-scheduler/)
+- No installation is required. The application may be viewed [here](https://vtaymany.github.io/weather_dashboard/)
 
 ## Roadmap
 
 - The UI may be improved following best UI practices
 - Since Moment.js is no longer supported by its developers it might be worth looking into other libraries
-- Make calendars available for others (with possible functionalities such as merging calendars and highlighting conflicts)
+- OpenWeather is currently implementing a new API called 'One Call API' - at this current time it only supports coordinates
+  - It would be a good idea to switch the whole application to use a single API call rather than 3
 
 ## Screenshots
 
-Demo showing persistent values
-![Saved in local storage](./Assets/persistent-data.gif 'Saved in local storage')
-
-Demo showing time blocks color-coded based on the current time
-![Time by color](./Assets/time-by-color.png 'Time by color')
+Demo showing full application
+![Full application demo](./assets/screenshots/weather-dashboard.gif 'Full application demo')
 
 ## Credits
 
-- [Font Awesome - Save icon](https://fontawesome.com/)
+- [Bootstrap](https://getbootstrap.com/)
+- [OpenWeather](https://openweathermap.org/)
+- [Moment.js](https://momentjs.com/)
+- [Font Awesome](https://fontawesome.com/)
 - [w3schools](https://www.w3schools.com/)
 
 ## Credits
