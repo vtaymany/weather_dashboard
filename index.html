@@ -15,14 +15,15 @@
       integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
       crossorigin="anonymous"
     />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
       crossorigin="anonymous"
     ></script>
     <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
       crossorigin="anonymous"
     ></script>
     <script
@@ -49,57 +50,57 @@
             <div class="form-group mx-sm-3 mb-2">
               <label for="inputPassword2" class="sr-only">City</label>
               <input
-                type="password"
+                type="text"
                 class="form-control"
-                id="inputPassword2"
+                id="inputCity"
                 placeholder="City"
               />
             </div>
-            <button type="submit" class="btn btn-primary mb-2">
+            <button
+              type="button"
+              id="submit-button"
+              class="btn btn-primary mb-2"
+            >
               <i class="fa fa-search"></i>
             </button>
           </form>
-          <ul class="list-group past-cities">
-            <li class="list-group-item past-city">Los Angeles</li>
-            <li class="list-group-item past-city">Tokyo</li>
-            <li class="list-group-item past-city">New York</li>
-          </ul>
+          <div id="past-cities" class="list-group"></div>
+          <div class="list-group">
+            <button
+              id="clear-search-history"
+              type="button"
+              class="btn btn-primary mb-2"
+            >
+              Clear search history
+            </button>
+          </div>
         </div>
         <div class="col-12 col-md-8">
           <div class="card text-center">
-            <div class="card-header city-name">Los Angeles</div>
+            <div id="current-city-name" class="card-header"></div>
             <div class="card-body">
-              <h5 class="card-title city-date">11-28-2020</h5>
+              <h5 id="current-city-date" class="card-title"></h5>
               <div class="card-text">
-                Temperature:<span class="city-temperature"></span>
+                Temperature:<span id="current-city-temperature"></span>
               </div>
               <div class="card-text">
-                Humidity:<span class="city-temperature"></span>
+                Humidity:<span id="current-city-humidity"></span>
               </div>
               <div class="card-text">
-                Wind Speed<span class="city-temperature"></span>:
+                Wind Speed:<span id="current-city-wind-speed"></span>
               </div>
               <div class="card-text">
-                UV Index:<span class="city-temperature"></span>
+                UV Index:<span id="current-city-uv"></span>
               </div>
             </div>
           </div>
           <div class="container px-5 py-5">
-            <div class="row">
-              <div class="col mx-1">
-                <div class="card text-center">
-                  <div class="card-body">
-                    <h5 class="card-title forecast-date">11/30/2020</h5>
-                    <h6 class="card-subtitle mb-2 forecast-icon">icon</h6>
-                    <p class="card-text forecast-temperature">70C</p>
-                    <p class="card-text forecast-humidity">50%</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col mx-1">2</div>
-              <div class="col mx-1">3</div>
-              <div class="col mx-1">4</div>
-              <div class="col mx-1">5</div>
+            <div id="five-day-forecast" class="row">
+              <div id="day-1" class="col"></div>
+              <div id="day-2" class="col"></div>
+              <div id="day-3" class="col"></div>
+              <div id="day-4" class="col"></div>
+              <div id="day-5" class="col"></div>
             </div>
           </div>
         </div>
